@@ -1,4 +1,4 @@
-def vrc_check(message: bytes) -> bool:
+def vrc_checker(message: bytes) -> bool:
     xorresult = 0
     for byte in message:
         xorresult ^= byte
@@ -21,4 +21,4 @@ def vrc_generator(message: bytes) -> bytes:
 if __name__ == '__main__':
     a = vrc_generator(b"a")
     print(format(int.from_bytes(a, "big"), 'b'))
-    print(vrc_check(a))
+    print(vrc_checker(a))
